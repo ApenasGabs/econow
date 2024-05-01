@@ -1,24 +1,36 @@
-import { useState } from 'react'
-import ecoNowLogo from '../public/android-chrome-512x512.png'
-import './App.css'
+import { useEffect, useState } from "react";
+import ecoNowLogo from "../public/android-chrome-512x512.png";
+import "./App.css";
+import Tree from "./components/Tree/Tree";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(
+    () => Number(localStorage.getItem("count")) || 0
+  );
+
+  useEffect(() => {
+    localStorage.setItem("count", count.toString());
+  }, [count]);
 
   return (
     <>
       <div>
-          <img src={ecoNowLogo} className="logo" alt="Vite logo" />
+        <img src={ecoNowLogo} className="logo" alt="Vite logo" />
+        <p>Voce ja plantou {count} arvores</p> 
       </div>
       <h1>Echo Now</h1>
       <h2>Menos gastos, mais sustentabilidade.</h2>
+      <p>E se ajudar o planeta fosse tao facil quanto apertar um botao? </p>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
-          Click to plant a tree {count}
+          Clique para plantar uma arvore
         </button>
       </div>
+      {Array.from({ length: count }, (_, i) => (
+        <Tree key={i} />
+      ))}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
