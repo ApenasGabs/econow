@@ -15,10 +15,10 @@ function App() {
   return (
     <>
       <div>
-        <img src={ecoNowLogo} className="logo" alt="Vite logo" />
+        <img src={ecoNowLogo} className="logo" alt="Eco logo" />
         <p>Voce ja plantou {count} arvores</p> 
       </div>
-      <h1>Echo Now</h1>
+      <h1>Eco Now</h1>
       <h2>Menos gastos, mais sustentabilidade.</h2>
       <p>E se ajudar o planeta fosse tao facil quanto apertar um botao? </p>
       <div className="card">
