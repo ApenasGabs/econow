@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ecoNowLogo from "../public/android-chrome-512x512.png";
+import ecoNowLogo from  "./assets/Logo_ECHONOW black.png"
 import "./App.css";
 import Tree from "./components/Tree/Tree";
 
